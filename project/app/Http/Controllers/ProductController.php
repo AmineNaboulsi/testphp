@@ -68,8 +68,7 @@ class ProductController extends Controller
      */
     public function destroy(Request $request)
     {
-        $productId = $request->header('id');
-        $product = Product::find($productId);
+        $product = Product::find($request->id);
 
         if ($product) {
             $product->delete();
